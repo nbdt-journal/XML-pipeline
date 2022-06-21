@@ -1,0 +1,30 @@
+<processing-meta
+   tagset-family="jats"
+   base-tagset="archiving"
+   mathml-version="3.0" 
+   table-model="both">
+ 
+  <custom-meta-group content-type="conversion"> 
+   <custom-meta>
+    <meta-name>Conversion Vendor</meta-name>
+    <meta-value>Big Trees Conversion, Inc.</meta-value>
+   </custom-meta>
+  
+   <custom-meta>
+    <meta-name>QA Contractor</meta-name>
+    <meta-value>Find-and-Fix Ltd.</meta-value>
+   </custom-meta>
+  </custom-meta-group>
+ 
+  <custom-meta-group content-type="legal-approval"> 
+   <custom-meta>
+    <meta-name>approver initials</meta-name>
+    <meta-value>DAL</meta-value>
+   </custom-meta>
+  
+   <custom-meta>
+    <meta-name>Legal Signoff date</meta-name>
+    <meta-value>2020-10-31</meta-value>
+   </custom-meta>
+  </custom-meta-group>
+ </processing-meta>
