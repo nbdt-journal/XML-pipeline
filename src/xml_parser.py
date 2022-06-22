@@ -18,5 +18,5 @@ def removeSection(root, tag, identifier, identifier_name):
 if __name__ == '__main__':
     tree = ET.parse('sample.xml')
     root = tree.getroot()
-    removeTag(root, 'sec', 'id', 'conflict-of-interest')
-    data = getData(root, 'sec', 'id', 'conflict-of-interest')
+    removeSection(root, 'sec', 'id', 'conflict-of-interest')
+    data = getSectionData(root, 'sec', 'id', 'conflict-of-interest')
