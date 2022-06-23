@@ -6,6 +6,6 @@ from element import Element
 
 ''' Building a graph for Elocation-ID ''' 
 # Defining Elements
-elocation_id = Element('elocation_id')
+elocation_id = Element('elocation-id')
 # Creating the Nodes
 elocation_id_node = Node(element=elocation_id, graph=node.get_leaf_graph())
