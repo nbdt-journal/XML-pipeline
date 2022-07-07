@@ -1,6 +1,27 @@
 import json 
 import xml.etree.ElementTree as ET
 
+def add_epigraph(input_filepath, dic):
+    tree = ET.parse(input_filepath)
+    root = tree.getroot()
+    parent_map = {c:p for p in root.iter() for c in p}
+    remove = []
+    for child in root.iter():
+        if child.tag == 'p':
+            if 'EPIGRAPH' in child.text: 
+                text, attribute = dic[child.text]
+                disp_quote = ET.Element('disp-quote')
+                preformat = ET.SubElement(disp_quote, 'preformat')
+                preformat.text = text 
+                attrib = ET.SubElement(disp_quote, 'attrib')
+                attrib.text = attribute    
+                parent = parent_map[child]
+                index = list(parent).index(child)
+                parent.remove(child)
+                parent.insert(index, disp_quote)
+    ET.indent(root, '  ')
+    tree.write('out.xml', encoding="utf-8", xml_declaration=True)
+
 def add_quotes(input_filepath, dic):
     tree = ET.parse(input_filepath)
     root = tree.getroot()
@@ -9,7 +30,6 @@ def add_quotes(input_filepath, dic):
     for child in root.iter():
         if child.tag == 'p':
             if 'QUOTE' in child.text: 
-                print(child.text)
                 text, attribute = dic[child.text]
                 disp_quote = ET.Element('disp-quote')
                 p = ET.SubElement(disp_quote, 'p')
@@ -31,3 +51,4 @@ if __name__ == '__main__':
         epigraphs = json.load(f)
 
     add_quotes('sample.xml', quotes)
+    add_epigraph('out.xml', epigraphs)
