@@ -1027,3 +1027,13 @@ G_article_meta.add_edge(counts_node, last_node)
 G_article_meta.add_edge(custom_meta_group_node, last_node)
 # Building the article-meta node
 article_meta_node = Node(element=article_meta, graph=G_article_meta)
+
+if __name__ == '__main__':
+    import xml.etree.ElementTree as ET
+    tree = ET.parse('test_samples/article_meta.xml')
+    root = tree.getroot()
+    author_notes = ET.Element('author-notes')
+    fn = ET.SubElement(author_notes, 'fn', attrib={'fn-type': 'COI-statement'})
+    article_meta_node.insert(root, author_notes)
+    ET.indent(root, '  ')
+    tree.write('out.xml', encoding="utf-8", xml_declaration=True)

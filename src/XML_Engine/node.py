@@ -9,6 +9,56 @@ class Node:
         self.graph = graph 
         self.start_node = start_node
         self.end_node = end_node
+    
+    def insert(self, element_tree_node, elem):
+        dic = {'predecessors': None, 'successors': None, 'parent': None, 'parent_element': None}
+        processed = []
+        # recursive function to find the node
+        def find_node(curr):
+            processed.append(curr.element.name)
+            # print(curr.element.name)
+            if curr.graph is not None:
+                for node in curr.graph:
+                    if node.element.name == elem.tag:
+                        dic['predecessors'] = [edge[0] for edge in curr.graph.in_edges(node)]
+                        dic['successors'] = [edge[1] for edge in curr.graph.out_edges(node)]
+                        dic['parent'] = curr 
+                        return  
+                    else:
+                        if node.element.name not in processed:
+                            find_node(node)     
+        find_node(self)
+        predecessors = dic['predecessors']
+        successors = dic['successors']
+        parent = dic['parent']
+        predecessors_name = [each.element.name for each in predecessors]
+        successors_name = [each.element.name for each in successors]
+
+        # print(parent.element.name)
+        # print(predecessors_name)
+        # print(successors_name)
+
+        def find_element(curr):
+            if curr.tag == parent.element.name:
+                dic['parent_element'] = curr 
+                return
+            else:
+                for child in curr.child:
+                    find_element(child)
+        find_element(element_tree_node)
+        parent_element = dic['parent_element']
+        
+        children = [child.tag for child in parent_element]
+        if 'first' in predecessors_name and children[0] in successors_name:
+            parent_element.insert(0, elem)
+        elif 'last' in successors_name and children[-1] in predecessors_name:
+            parent_element.insert(len(children)-1, elem)  
+        else:
+            for i in range(0, len(children)-1):
+                if children[i] in predecessors_name and children[i+1] in successors_name:
+                    parent_element.insert(i, elem)
+        return element_tree_node
+
 
     def check(self, element_tree_node):
         # no check for start or end nodes
@@ -67,7 +117,6 @@ class Node:
                 print('Received Tag: None')
                 return False 
         return True 
-            
 
 def printGraph(graph):
     print('Nodes: ', end = '')
