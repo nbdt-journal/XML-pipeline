@@ -1,0 +1,1 @@
+ web: gunicorn XML_Pipeline.wsgi
