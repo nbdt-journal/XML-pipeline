@@ -27,4 +27,6 @@ for i in list(G_alternatives.nodes):
                 continue 
         if j.element.name == 'first':
             continue 
+        if j.element.anme == 'object-id' and i.element.name != 'object-id':
+            continue
         G_alternatives.add_edge(i, j)
