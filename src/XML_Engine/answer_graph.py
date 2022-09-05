@@ -15,9 +15,10 @@ answer_node = Node(element=answer, graph=G_answer)
 group_1 = [address_node, alternatives_node, answer_node, answer_set_node, array_node, block_alternatives_node, boxed_text_node, chem_struct_wrap_node, code_node, fig_node, fig_group_node, graphic_node, media_node, preformat_node, question_node, question_wrap_node, question_wrap_group_node, supplementary_material_node, table_wrap_node, table_wrap_group_node, disp_formula_node, disp_formula_group_node, def_list_node, list_node, tex_math_node, mml_math_node, p_node, related_article_node, related_object_node, disp_quote_node, speech_node, statement_node, verse_group_node]
 group_2 = [fn_group_node, glossary_node, ref_list_node]
 
-nodes = deepcopy(group_1)
-nodes.extend(group_2)
-nodes.extend([node.get_first_node(), node.get_last_node(), label_node, title_node, subtitle_node, atl_title_node, sec_node, explanation_node])
+G_answer.add_nodes_from(group_1)
+G_answer.add_nodes_from(group_2)
+G_answer.add_nodes_from([node.get_first_node(), node.get_last_node(), label_node, title_node, subtitle_node, atl_title_node, sec_node, explanation_node])
+
 
 for i in list(G_answer.nodes):
     for j in list(G_answer.nodes):
