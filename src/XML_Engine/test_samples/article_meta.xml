@@ -1,0 +1,24 @@
+<article-meta>
+<title-group>
+<article-title>This is my title</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+</contrib>
+<contrib contrib-type="author">
+</contrib>
+<contrib contrib-type="author">
+</contrib>
+<contrib contrib-type="author">
+</contrib>
+</contrib-group>
+<abstract>
+This is a generic template designed for use by NBDT, which includes
+several options for customization. Please consult the author guidelines
+for the journal to which you are submitting in order to confirm that
+your manuscript will comply with the journal’s requirements. Please
+replace this text with your abstract. On top of this style we also
+recommend using standard writing style for the contents of the paper and
+recommend the ten simple rules paper:
+</abstract>
+</article-meta>
