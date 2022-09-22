@@ -14,10 +14,6 @@ G_underline.add_nodes_from([node.get_first_node(), node.get_last_node(), email_n
     
 for i in list(G_underline.nodes):
     for j in list(G_underline.nodes):
-        if i.element.name == 'last':
-            break 
-        if i.element.name == j.element.name:
-            continue 
-        if j.element.name == 'first':
-            continue 
-        G_underline.add_edge(i, j)
+        if i.element.name != 'last':
+            if j.element.name != 'first': 
+                G_underline.add_edge(i, j)
