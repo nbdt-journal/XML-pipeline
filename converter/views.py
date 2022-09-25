@@ -5,6 +5,7 @@ import subprocess
 from django.conf import settings
 from django.templatetags.static import static
 import xml.etree.ElementTree as ET
+from converter.xml_parser import *
 
 # Create your views here.
 def home(request):
@@ -15,8 +16,8 @@ def home(request):
         else:
             print(file_input.name)
             try:
-                imgname = "input.tex"
-                file_path = os.path.join(settings.MEDIA_ROOT, "XML_Pipeline/static/"+imgname)
+                filename = "input.tex"
+                file_path = os.path.join(settings.MEDIA_ROOT, "XML_Pipeline/static/"+filename)
                 if os.path.exists(file_path):
                     os.remove(file_path)
                 fs = FileSystemStorage()
@@ -28,7 +29,11 @@ def home(request):
                 subprocess.call(command.split(" "))
                 print("Conversion Done...")
                 tree = ET.parse('XML_Pipeline/static/output.xml')
+                root = tree.getroot()
+                make_conflict_of_interest(root)
+                tree.write('XML_Pipeline/static/output.xml')
                 return render(request,'converter/index.html',{'file_name':output_file_name,'file_path':output_file_path})
             except Exception as e:
+                print(e)
                 return render(request,'converter/index.html', {'error': "Unable to convert the file"})
     return render(request,'converter/index.html')
