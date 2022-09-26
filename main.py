@@ -57,6 +57,12 @@ def main(input_filepath, output_filepath, reference_input_filepath, reference_ou
     import references
     references.fix_references.process(reference_input_filepath, reference_output_filepath)
 
+    # cleaning-up temporary files
+    os.remove('temp.tex')
+    os.remove('endnote.json')
+    os.remove('epigraph.json')
+    os.remove('quote.json')
+
 if __name__ == '__main__':
     input_filepath = 'main.tex'
     output_filepath = 'main.xml'
