@@ -1,7 +1,7 @@
 import json 
 import xml.etree.ElementTree as ET
 
-def add_epigraph(input_filepath, dic):
+def add_epigraph(input_filepath, output_filepath, dic):
     tree = ET.parse(input_filepath)
     root = tree.getroot()
     parent_map = {c:p for p in root.iter() for c in p}
@@ -20,9 +20,9 @@ def add_epigraph(input_filepath, dic):
                 parent.remove(child)
                 parent.insert(index, disp_quote)
     ET.indent(root, '  ')
-    tree.write('out.xml', encoding="utf-8", xml_declaration=True)
+    tree.write(output_filepath, encoding="utf-8", xml_declaration=True)
 
-def add_quotes(input_filepath, dic):
+def add_quotes(input_filepath, output_filepath, dic):
     tree = ET.parse(input_filepath)
     root = tree.getroot()
     parent_map = {c:p for p in root.iter() for c in p}
@@ -41,7 +41,7 @@ def add_quotes(input_filepath, dic):
                 parent.remove(child)
                 parent.insert(index, disp_quote)
     ET.indent(root, '  ')
-    tree.write('out.xml', encoding="utf-8", xml_declaration=True)
+    tree.write(output_filepath, encoding="utf-8", xml_declaration=True)
 
 
 if __name__ == '__main__':

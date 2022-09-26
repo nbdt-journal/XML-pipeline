@@ -2,15 +2,15 @@ import re
 import json
 import xml.etree.ElementTree as ET
 
-if __name__ == '__main__':
+def process(input_filepath, output_filepath):
     # fix ref marker
-    f = open('out.xml', 'r')
+    f = open(input_filepath, 'r')
     s = f.read()
     f.close()
     endnote_arr = [each.group(1) for each in re.finditer(r'ENDNOTE\[(.*)\]', s)]
     for each in endnote_arr:
-        s = (re.sub('ENDNOTE\[' + each + '\]', '<ref id="endnotes' + each + '"><sup>' + each + '</sup></ref>', s))
-    f = open('out.xml', 'w')
+        s = (re.sub('ENDNOTE\[' + each + '\]', '<xref ref-type="sec" rid="e' + each + '"' + '><sup>' + each + '</sup></xref>', s))
+    f = open(input_filepath, 'w')
     f.write(s)
     f.close()
 
@@ -20,12 +20,13 @@ if __name__ == '__main__':
     notes = ET.Element('notes')
     for key in endnotes:
         text = endnotes[key]
-        sec = ET.SubElement(notes, 'sec', attrib={'id': 'endnotes' + key[-1]})
-        sec.text = text 
+        sec = ET.SubElement(notes, 'sec', attrib={'id': 'e' + key[-1]})
+        p = ET.SubElement(sec, 'p')
+        p.text = text 
 
-    tree = ET.parse('out.xml')
+    tree = ET.parse(input_filepath)
     root = tree.getroot()
     root[2].insert(1, notes)
     ET.indent(root, '  ')
-    tree.write('dummy.xml', encoding="utf-8", xml_declaration=True)
+    tree.write(output_filepath, encoding="utf-8", xml_declaration=True)
     

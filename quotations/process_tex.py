@@ -11,7 +11,7 @@ def fix_spacing(content):
         content = content[1:]
     return content
 
-def process(input_filepath, quotation_type='quote'):
+def process(input_filepath, output_filepath, quotation_type='quote'):
     # reading the file 
     f = open(input_filepath, 'r')
     lines = f.readlines()

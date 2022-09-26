@@ -6,8 +6,8 @@ entry_type_dict['article'] = 'journal'
 entry_type_dict['book'] = 'book'
 
 # does not take care for accents and weird characters
-if __name__ == '__main__':
-    with open('sample.bib') as bibtex_file:
+def process(input_filepath, output_filepath):
+    with open(input_filepath) as bibtex_file:
         bib_database = bibtexparser.load(bibtex_file)
 
         ref_list = ET.Element('ref-list')
@@ -56,10 +56,11 @@ if __name__ == '__main__':
                 source = ET.SubElement(element_citation, 'source')
                 source.text = entry['journal']
 
-            # for key in entry:
-            #     print(key + ': ' + entry[key])
-            # exit(0)
-
     tree = ET.ElementTree(ref_list)
     ET.indent(tree, '  ')
-    tree.write('references.xml', encoding="utf-8")
+    tree.write(output_filepath, encoding="utf-8")
+
+if __name__ == '__main__':
+    input_filepath = 'sample.bib'
+    output_filepath = 'references.xml'
+    process(input_filepath, output_filepath)
