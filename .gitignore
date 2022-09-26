@@ -7,4 +7,7 @@ bin/
 media/
 db.sqlite3
 input.tex
-output.xml
+journal.xml
+reference.bib
+reference.xml
+output.zip
