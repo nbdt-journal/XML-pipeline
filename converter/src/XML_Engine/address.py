@@ -1,0 +1,57 @@
+import networkx as nx
+
+class Address:
+    def __init__(self):
+        self.name = 'address' 
+        self.DTD  = self.make_DTD()
+
+    def make_DTD(self):
+        G = nx.DiGraph()
+        #adding nodes
+        G.add_node('start')
+        G.add_node('accept')
+        G.add_node('addr-line')
+        G.add_node('city')
+        G.add_node('country')
+        G.add_node('fax')
+        G.add_node('institution')
+        G.add_node('institution-wrap')
+        G.add_node('phone')
+        G.add_node('postal-code')
+        G.add_node('state')
+        G.add_node('email')
+        G.add_node('ext-link')
+        G.add_node('uri')
+        G.add_node('label')
+        G.add_node('x')
+        #adding edges
+        G.add_edge('start', 'addr-line')
+        G.add_edge('start', 'city')
+        G.add_edge('start', 'country')
+        G.add_edge('start', 'fax')
+        G.add_edge('start', 'institution')
+        G.add_edge('start', 'institution-wrap')
+        G.add_edge('start', 'phone')
+        G.add_edge('start', 'postal-code')
+        G.add_edge('start', 'state')
+        G.add_edge('start', 'email')
+        G.add_edge('start', 'ext-link')
+        G.add_edge('start', 'uri')
+        G.add_edge('start', 'label')
+        G.add_edge('start', 'x')
+        G.add_edge('start', 'accept')
+        G.add_edge('addr-line', 'accept')
+        G.add_edge('city', 'accept')
+        G.add_edge('country', 'accept')
+        G.add_edge('fax', 'accept')
+        G.add_edge('institution', 'accept')
+        G.add_edge('institution-wrap', 'accept')
+        G.add_edge('phone', 'accept')
+        G.add_edge('postal-code', 'accept')
+        G.add_edge('state', 'accept')
+        G.add_edge('email', 'accept')
+        G.add_edge('ext-link', 'accept')
+        G.add_edge('uri', 'accept')
+        G.add_edge('label', 'accept')
+        G.add_edge('x', 'accept')
+        return G

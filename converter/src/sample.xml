@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.2 20190208//EN"
+                  "JATS-archivearticle1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.2" article-type="other">
+<front>
+<journal-meta>
+<journal-id></journal-id>
+<journal-title-group>
+</journal-title-group>
+<issn></issn>
+<publisher>
+<publisher-name></publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<title-group>
+<article-title>This is my title</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<string-name>Author One PhD</string-name>
+</contrib>
+<contrib contrib-type="author">
+<string-name>Author A. Two MD</string-name>
+</contrib>
+<contrib contrib-type="author">
+<string-name>Author Three PhD</string-name>
+</contrib>
+<contrib contrib-type="author">
+<string-name>Author B. Four</string-name>
+</contrib>
+</contrib-group>
+<abstract>
+<p>This is a generic template designed for use by NBDT, which includes
+several options for customization. Please consult the author guidelines
+for the journal to which you are submitting in order to confirm that
+your manuscript will comply with the journal’s requirements. Please
+replace this text with your abstract. On top of this style we also
+recommend using standard writing style for the contents of the paper and
+recommend the ten simple rules paper:
+<ext-link ext-link-type="uri" xlink:href="http://journals.plos.org/ploscompbiol/article/metrics?id=10.1371/journal.pcbi.1005619">Standard
+Structure</ext-link></p>
+</abstract>
+</article-meta>
+</front>
+<body>
+<sec id="first-level-heading">
+  <title>First Level Heading</title>
+  <p>Please lay out your article using the section headings and example
+  objects below, and remember to delete all help text prior to
+  submitting your article to the journal.</p>
+  <fig>
+    <caption><p>Although we encourage authors to send us the
+    highest-quality figures possible, for peer-review purposes we are
+    can accept a wide variety of formats, sizes, and resolutions.
+    Legends should be concise but comprehensive – the figure and its
+    legend must be understandable without reference to the text. Include
+    definitions of any symbols used and define/explain all abbreviations
+    and units of measurement.</p></caption>
+    <graphic mimetype="image" mime-subtype="png" xlink:href="example-image-rectangle.png" xlink:title="" />
+  </fig>
+  <sec id="second-level-heading">
+    <title>Second Level Heading</title>
+    <p>If data, scripts or other artifacts used to generate the analyses
+    presented in the article are available via a publicly available data
+    repository, please include a reference to the location of the
+    material within the article.</p>
+    <p>This is an equation, numbered <disp-formula><alternatives>
+    <tex-math><![CDATA[\int_0^{+\infty}e^{-x^2}dx=\frac{\sqrt{\pi}}{2}]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mo>∫</mml:mo><mml:mn>0</mml:mn><mml:mrow><mml:mo>+</mml:mo><mml:mi>∞</mml:mi></mml:mrow></mml:msubsup><mml:msup><mml:mi>e</mml:mi><mml:mrow><mml:mo>−</mml:mo><mml:msup><mml:mi>x</mml:mi><mml:mn>2</mml:mn></mml:msup></mml:mrow></mml:msup><mml:mi>d</mml:mi><mml:mi>x</mml:mi><mml:mo>=</mml:mo><mml:mfrac><mml:msqrt><mml:mi>π</mml:mi></mml:msqrt><mml:mn>2</mml:mn></mml:mfrac></mml:mrow></mml:math></alternatives></disp-formula>
+    And one that is not numbered <disp-formula><alternatives>
+    <tex-math><![CDATA[e^{i\pi}=-1]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msup><mml:mi>e</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mi>π</mml:mi></mml:mrow></mml:msup><mml:mo>=</mml:mo><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></alternatives></disp-formula></p>
+  </sec>
+  <sec id="adding-citations-and-a-references-list">
+    <title>Adding Citations and a References List</title>
+    <p>Please use a <monospace>.bib</monospace> file to store your
+    references. When using Overleaf to prepare your manuscript, you can
+    upload a <monospace>.bib</monospace> file or import your Mendeley,
+    CiteULike or Zotero library directly as a
+    <monospace>.bib</monospace>
+    file<xref ref-type="fn" rid="fn1">1</xref>. You can then cite
+    entries from it, like this: . Just remember to specify a
+    bibliography style, as well as the filename of the
+    <monospace>.bib</monospace>.</p>
+    <p>You can find a video tutorial here to learn more about BibTeX:
+    <ext-link ext-link-type="uri" xlink:href="https://www.overleaf.com/help/97-how-to-include-a-bibliography-using-bibtex">https://www.overleaf.com/help/97-how-to-include-a-bibliography-using-bibtex</ext-link>.</p>
+    <p>This template provides two options for the citation and reference
+    list style:</p>
+    <def-list>
+      <def-item>
+        <term>Numerical style</term>
+        <def>
+          <p>Use
+          <monospace>\documentclass[...,num-refs]{nbdt-article}</monospace></p>
+        </def>
+      </def-item>
+      <def-item>
+        <term>Author-year style</term>
+        <def>
+          <p>Use
+          <monospace>\documentclass[...,alpha-refs]{nbdt-article}</monospace></p>
+        </def>
+      </def-item>
+    </def-list>
+    <sec id="third-level-heading">
+      <title>Third Level Heading</title>
+      <p>Supporting information will be included with the published
+      article. For submission any supporting information should be
+      supplied as separate files but referred to in the text.</p>
+      <p>Appendices will be published after the references. For
+      submission they should be supplied as separate files but referred
+      to in the text.</p>
+      <sec id="fourth-level-heading">
+        <title>Fourth Level Heading</title>
+        <disp-quote>
+          <p>The significant problems we have cannot be solved at the
+          same level of thinking with which we created them.</p>
+        </disp-quote>
+        <boxed-text>
+          <p>Albert Einstein Anyone who has never made a mistake has
+          never tried anything new.</p>
+        </boxed-text>
+        <sec id="fifth-level-heading">
+          <title>Fifth level heading</title>
+          <p>Measurements should be given in SI or SI-derived units.
+          Chemical substances should be referred to by the generic name
+          only. Trade names should not be used. Drugs should be referred
+          to by their generic names. If proprietary drugs have been used
+          in the study, refer to these by their generic name, mentioning
+          the proprietary name, and the name and location of the
+          manufacturer, in parentheses.</p>
+          <boxed-text>
+            <table-wrap>
+              <caption>
+                <p>This is a table. Tables should be self-contained and
+                complement, but not duplicate, information contained in
+                the text. They should be not be provided as images.
+                Legends should be concise but comprehensive – the table,
+                legend and footnotes must be understandable without
+                reference to the text. All abbreviations must be defined
+                in footnotes.</p>
+              </caption>
+              <table>
+                <tbody>
+                  <tr>
+                    <td align="left"></td>
+                    <td align="center"></td>
+                    <td align="center"></td>
+                    <td align="right"></td>
+                    <td align="right"></td>
+                  </tr>
+                  <tr>
+                    <td align="left">Age at testing</td>
+                    <td align="center">38</td>
+                    <td align="center">58</td>
+                    <td align="right">504.48</td>
+                    <td align="right">58 ms</td>
+                  </tr>
+                  <tr>
+                    <td align="left">Age at testing</td>
+                    <td align="center">38</td>
+                    <td align="center">58</td>
+                    <td align="right">504.48</td>
+                    <td align="right">58 ms</td>
+                  </tr>
+                  <tr>
+                    <td align="left">Age at testing</td>
+                    <td align="center">38</td>
+                    <td align="center">58</td>
+                    <td align="right">504.48</td>
+                    <td align="right">58 ms</td>
+                  </tr>
+                  <tr>
+                    <td align="left">Age at testing</td>
+                    <td align="center">38</td>
+                    <td align="center">58</td>
+                    <td align="right">504.48</td>
+                    <td align="right">58 ms</td>
+                  </tr>
+                  <tr>
+                    <td align="left">stop alternating row colors from
+                    here onwards</td>
+                    <td align="center"></td>
+                    <td align="center"></td>
+                    <td align="right"></td>
+                    <td align="right"></td>
+                  </tr>
+                  <tr>
+                    <td align="left">Age at testing</td>
+                    <td align="center">38</td>
+                    <td align="center">58</td>
+                    <td align="right">504.48</td>
+                    <td align="right">58 ms</td>
+                  </tr>
+                  <tr>
+                    <td align="left">Age at testing</td>
+                    <td align="center">38</td>
+                    <td align="center">58</td>
+                    <td align="right">504.48</td>
+                    <td align="right">58 ms</td>
+                  </tr>
+                </tbody>
+              </table>
+            </table-wrap>
+            <boxed-text>
+              <p>JKL, just keep laughing; MN, merry noise.</p>
+            </boxed-text>
+          </boxed-text>
+        </sec>
+      </sec>
+    </sec>
+  </sec>
+</sec>
+<sec id="acknowledgements">
+  <title>acknowledgements</title>
+  <p>Acknowledgements should include contributions from anyone who does
+  not meet the criteria for authorship (for example, to recognize
+  contributions from people who provided technical help, collation of
+  data, writing assistance, acquisition of funding, or a department
+  chairperson who provided general support), as well as any funding or
+  other support information.</p>
+</sec>
+<sec id="conflict-of-interest">
+  <title>conflict of interest</title>
+  <p>You may be asked to provide a conflict of interest statement during
+  the submission process. Please check the journal’s author guidelines
+  for details on what to include in this section. Please ensure you
+  liaise with all co-authors to confirm agreement with the final
+  statement.</p>
+  <p>This is another line.</p>
+  <p>This is another line.</p>
+</sec>
+</body>
+<back>
+<fn-group>
+  <fn id="fn1">
+    <label>1</label><p>see
+    <ext-link ext-link-type="uri" xlink:href="https://www.overleaf.com/blog/184">https://www.overleaf.com/blog/184</ext-link></p>
+  </fn>
+</fn-group>
+</back>
+</article>

@@ -1,0 +1,57 @@
+import networkx as nx
+
+class Event_desc:
+    def __init__(self):
+        self.name = 'event-desc' 
+        self.DTD  = self.make_DTD()
+
+    def make_DTD(self):
+        G = nx.DiGraph()
+        #adding nodes
+        G.add_node('start')
+        G.add_node('accept')
+        G.add_node('#PCDATA')
+        G.add_node('email')
+        G.add_node('ext-link')
+        G.add_node('uri')
+        G.add_node('article-id')
+        G.add_node('issn')
+        G.add_node('issn-l')
+        G.add_node('isbn')
+        G.add_node('article-version')
+        G.add_node('article-version-alternatives')
+        G.add_node('date')
+        G.add_node('string-date')
+        G.add_node('pub-date')
+        G.add_node('pub-date-not-available')
+        #adding edges
+        G.add_edge('start', '#PCDATA')
+        G.add_edge('start', 'email')
+        G.add_edge('start', 'ext-link')
+        G.add_edge('start', 'uri')
+        G.add_edge('start', 'article-id')
+        G.add_edge('start', 'issn')
+        G.add_edge('start', 'issn-l')
+        G.add_edge('start', 'isbn')
+        G.add_edge('start', 'article-version')
+        G.add_edge('start', 'article-version-alternatives')
+        G.add_edge('start', 'date')
+        G.add_edge('start', 'string-date')
+        G.add_edge('start', 'pub-date')
+        G.add_edge('start', 'pub-date-not-available')
+        G.add_edge('start', 'accept')
+        G.add_edge('#PCDATA', 'accept')
+        G.add_edge('email', 'accept')
+        G.add_edge('ext-link', 'accept')
+        G.add_edge('uri', 'accept')
+        G.add_edge('article-id', 'accept')
+        G.add_edge('issn', 'accept')
+        G.add_edge('issn-l', 'accept')
+        G.add_edge('isbn', 'accept')
+        G.add_edge('article-version', 'accept')
+        G.add_edge('article-version-alternatives', 'accept')
+        G.add_edge('date', 'accept')
+        G.add_edge('string-date', 'accept')
+        G.add_edge('pub-date', 'accept')
+        G.add_edge('pub-date-not-available', 'accept')
+        return G

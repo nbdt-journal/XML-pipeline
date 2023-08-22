@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>LaTex to JATS</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Navbar-Centered-Brand-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body style="height: 300%;">
+    <header style="height: 25%;">
+        <div class="card" style="height: 25%;">
+            <div class="card-body" style="color: var(--bs-white);background: var(--bs-blue);margin: 0%;">
+                <h1 style="text-align: center;vertical-align: middle; margin-top: 3%; margin-bottom: 3%; font-size: 3em;">LaTex to JATS</h1>
+            </div>
+        </div>
+    </header>
+    <form method="post" enctype="multipart/form-data" style="text-align: center;vertical-align: middle;margin-top: 4%; min-width: 100%; ">
+        {% csrf_token %}
+        <div class="col" style="text-align: center;padding: 3% 10%;background: #e1dede;border-style: solid;border-color: rgb(107, 126, 107);border-radius: 12px;height: auto;align-content: center; justify-content: center; vertical-align: middle;align-items: center;align-self:center;max-width: min-content; margin-left: auto; margin-right: auto;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="width: 20%;min-width: 10%;height: 20%;min-height: 10%;">
+                <path d="M11 14.9861C11 15.5384 11.4477 15.9861 12 15.9861C12.5523 15.9861 13 15.5384 13 14.9861V7.82831L16.2428 11.0711L17.657 9.65685L12.0001 4L6.34326 9.65685L7.75748 11.0711L11 7.82854V14.9861Z" fill="currentColor"></path>
+                <path d="M4 14H6V18H18V14H20V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18V14Z" fill="currentColor"></path>
+            </svg>
+            <p style="margin-top: 2%;font-weight: bold;color: rgb(66, 99, 148);">Browse File(s) (.tex/.bib)</p>
+            <input type="file" name="tex_file_input" accept=".tex,.bib" multiple>
+        </div>
+        <p style="margin-top: 1.5%;font-size: 1em; color: red;">{{error}}</p>
+        {% if file_name %}
+            <a href="{% static file_name %}" download style="text-decoration:none;">
+                <div class="btn btn-primary" type="submit" style="padding: 1% 3%;border-style: solid;border-radius: 14px;margin-top: 0.75%;margin-bottom: 0.75%;font-size: 1.1em;background: rgb(101, 164, 189);font-weight: bold;">
+                <i class="fa fa-download"></i>&nbsp;Download {{file_name}}</div>
+            </a>
+            <br>
+        {% endif %}
+        <button class="btn btn-primary" type="submit" style="max-width: min-content;padding: 1% 6%;border-style: solid;border-radius: 14px;margin-top: 0.75%;font-size: 1.1em;background: rgb(10, 63, 105);font-weight: bold;">Convert</button>
+    </form>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>
